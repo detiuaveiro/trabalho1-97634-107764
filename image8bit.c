@@ -652,7 +652,6 @@ int ImageLocateSubImage(Image img1, int* px, int* py, Image img2) { ///
 void ImageBlur(Image img, int dx, int dy) { ///
 
   Image blurredImage = ImageCreate(img->width, img->height, img->maxval);
-  assert(blurredImage != NULL);
 
   // loop pelos pixels da imagem para aplicar o filtro 
   for (int y = 0; y < img->height; ++y) {
