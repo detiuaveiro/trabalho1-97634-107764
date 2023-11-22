@@ -599,7 +599,7 @@ void ImageBlend(Image img1, int x, int y, Image img2, double alpha) { ///
 /// Returns 1 (true) if img2 matches subimage of img1 at pos (x, y).
 /// Returns 0, otherwise.
 int ImageMatchSubImage(Image img1, int x, int y, Image img2) { 
-
+  int count = 0;
   // Compara os pixels da subimagem (img2) com os pixels correspondentes na imagem maior (img1)
   for (int i = 0; i < img2->height; ++i) {
     for (int j = 0; j < img2->width; ++j) {
@@ -611,9 +611,10 @@ int ImageMatchSubImage(Image img1, int x, int y, Image img2) {
       if (valorPixel1 != valorPixel2) {
         return 0; // Retorna falso
       }
+      count++;
     }
   }
-
+  printf("comparações:%d",count )
   // se todas as comparações forem iguais, as imagens coincidem retorna verdadeiro
   return 1; 
 }
