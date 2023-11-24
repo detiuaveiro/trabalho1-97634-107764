@@ -659,8 +659,7 @@ int ImageLocateSubImage(Image img1, int* px, int* py, Image img2) { ///
   assert (img1 != NULL);
   assert (img2 != NULL);
   // Insert your code here!
-
-  int count = 0;
+  
   // loop pelos pixels da imagem maior (img1) para encontrar a subimagem (img2)
   for (int i = 0; i <= img1->height - img2->height; ++i) {
     for (int j = 0; j <= img1->width - img2->width; ++j) {
@@ -671,10 +670,8 @@ int ImageLocateSubImage(Image img1, int* px, int* py, Image img2) { ///
         *py = i;
         return 1; 
       }
-      count++;
     }
   }
-   printf("Número total de comparações: %d\n", count);
   // se nenhum correspondência for encontrada, (*px, *py) são deixados intocados e retorna falso
   return 0; 
 }
