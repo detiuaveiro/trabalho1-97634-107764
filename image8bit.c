@@ -705,7 +705,7 @@ for (int y = 0; y < img->height; ++y) {
 
       // evita a divisão por zero
       if (count > 0) {
-        uint8_t meanValue = (uint8_t)(sum / count);
+        uint8 meanValue = (uint8)(sum / count);
         ImageSetPixel(img, x, y, meanValue);
       }
       // se count for zero o valor original do pixel fica igual
