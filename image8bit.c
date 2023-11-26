@@ -618,7 +618,7 @@ void ImageBlend(Image img1, int x, int y, Image img2, double alpha) { ///
       uint8 valorPixel2 = ImageGetPixel(img2, j, i);
 
       // mistura os valores dos pixels com base no fator alpha
-      uint8 valorMisturado = (uint8)(alpha * valorPixel2 + (1.0 - alpha) * valorPixel1);
+      uint8 valorMisturado = (uint8)(alpha * valorPixel2 + 0.5 + (1.0 - alpha) * valorPixel1);
 
       // define o valor misturado na posição correspondente da img1
       ImageSetPixel(img1, x + j, y + i, valorMisturado);
