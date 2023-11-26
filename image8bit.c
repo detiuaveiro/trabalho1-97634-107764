@@ -531,7 +531,7 @@ Image ImageMirror(Image img) {
       int mirroredX = img->width - 1 - x;
 
       // mudar o valor do pixel original para o valor espelhado
-      uint8_t pixelValue = ImageGetPixel(img, x, y);
+      uint8 pixelValue = ImageGetPixel(img, x, y);
       ImageSetPixel(mirroredImage, mirroredX, y, pixelValue);
 
       // duplicar o pixel central para o caso da imagem ter um número impar de pixeis
@@ -592,7 +592,7 @@ void ImagePaste(Image img1, int x, int y, Image img2) {
   for (int i = 0; i < img2->height; ++i) {
     for (int j = 0; j < img2->width; ++j) {
       // obtém o valor do pixel da img2 e o cola na posição correspondente da img1
-      uint8_t valorPixel = ImageGetPixel(img2, j, i);
+      uint8 valorPixel = ImageGetPixel(img2, j, i);
       ImageSetPixel(img1, x + j, y + i, valorPixel);
     }
   }
@@ -639,8 +639,8 @@ int ImageMatchSubImage(Image img1, int x, int y, Image img2) {
   for (int i = 0; i < img2->height; ++i) {
     for (int j = 0; j < img2->width; ++j) {
       // obtém os valores dos pixels da img1 e img2
-      uint8_t valorPixel1 = ImageGetPixel(img1, x + j, y + i);
-      uint8_t valorPixel2 = ImageGetPixel(img2, j, i);
+      uint8 valorPixel1 = ImageGetPixel(img1, x + j, y + i);
+      uint8 valorPixel2 = ImageGetPixel(img2, j, i);
 
       // se os valores dos pixels não forem iguais, as imagens não coincidem
       if (valorPixel1 != valorPixel2) {
