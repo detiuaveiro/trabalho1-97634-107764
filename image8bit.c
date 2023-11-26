@@ -449,16 +449,18 @@ void ImageThreshold(Image img, uint8 thr) {
 void ImageBrighten(Image img, double factor) { 
   assert (img != NULL);
   //? assert(factor >= 0.0);
+  assert(factor >= 0);
+  // Insert your code here!
 
-  for (int i = 0; i < img->width * img->height; ++i) {
-    // multipicar cada 
-    double newLevel = img->pixel[i] * factor;
+  for (int i = 0; i < img->width * img->height;i++) {
+    // multipicar cada pixel pelo factor
+    double newLevel = img->pixel[i] * factor + 0.5;
 
-    // Clamp the result to ensure it doesn't exceed PixMax
+    // garantir que pixmax não é excedido
     if (newLevel > PixMax) {
       img->pixel[i] = PixMax;
     } else {
-      img->pixel[i] = (uint8_t)newLevel;
+      img->pixel[i] = (uint8)newLevel;
     }
   }
 }
